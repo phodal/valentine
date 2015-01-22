@@ -1,0 +1,6 @@
+{
+    "name": "valentia",
+    "dependencies": {
+        "lettuce": "0.1.1"
+    }
+}
