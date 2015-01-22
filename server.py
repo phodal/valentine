@@ -15,13 +15,12 @@ def root():
 class Task(Resource):
     @staticmethod
     def get(task_id):
-        return {task_id: tasks[task_id]}
+        return {task_id: tasks[task_id]}, 201, {'Access-Control-Allow-Origin': '*'}
 
     @staticmethod
-    def put(task_id):
-        tasks[task_id] = request.form['data']
-        return {task_id: tasks[task_id]}
-
+    def post(task_id):
+        tasks[task_id] = request.form
+        return {task_id: tasks[task_id]}, 204, {'Access-Control-Allow-Origin': '*'}
 
 api.add_resource(Task, '/<string:task_id>')
 
