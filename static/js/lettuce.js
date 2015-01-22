@@ -7,7 +7,7 @@ var Lettuce = function() {
 
 };
 
-Lettuce.VERSION = '0.1.0';
+Lettuce.VERSION = '0.1.1';
 
 root.lettuce = Lettuce;
 
@@ -176,7 +176,7 @@ Lettuce.send = function (url, method, callback, data) {
     request.open(method, url, true);
     if (data instanceof Object) {
         data = JSON.stringify(data);
-        request.setRequestHeader('Content-Type', 'application/json');
+        request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     }
     request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     request.send(data);
@@ -326,6 +326,36 @@ var simpleView = {
 };
 
 Lettuce.prototype = Lettuce.extend(Lettuce.prototype, simpleView);
+
+
+var Effect = {
+    slideDown: function (element, duration, finalheight) {
+        var s = element.style;
+        s.height = '0px';
+
+        var y = 0;
+        var frameRate = 10;
+        var totalFrames = duration / frameRate;
+        var heightIncrement = finalheight / totalFrames;
+        var oneSecond = 1000;
+        var interval = oneSecond / frameRate;
+        var tween = function () {
+            y += heightIncrement;
+            s.height = y + 'px';
+            if (y < finalheight) {
+                setTimeout(tween, interval);
+            }
+        };
+        tween();
+    }
+};
+
+var effect = {
+    Effect: Effect
+};
+
+
+Lettuce.prototype = Lettuce.extend(Lettuce.prototype, effect);
 
 
 /*
