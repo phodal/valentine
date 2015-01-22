@@ -15,7 +15,7 @@ def root():
 class Task(Resource):
     @staticmethod
     def get(task_id):
-        return {task_id: tasks[task_id]}, 201, {'Access-Control-Allow-Origin': '*'}
+        return {task_id: tasks[task_id]}, 201
 
     @staticmethod
     def post(task_id):
