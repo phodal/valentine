@@ -47,8 +47,13 @@
         .add(/#why/, why)
         .load();
 
-	window.setTimeout(about, 100);
-	window.setTimeout(what, 3000);
-	window.setTimeout(why, 6000);
+	var p = new L.Promise();
+	p.then(
+		window.setTimeout(about, 100)
+	).then(
+		window.setTimeout(what, 3000)
+	).then(
+		window.setTimeout(why, 6000)
+	)
 
 }(lettuce));
