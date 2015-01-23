@@ -2,20 +2,17 @@
     var L = new lettuce();
 
     var data = {
-        about: "This about A Mobile Framework For Romantic",
-        what: "A Framework",
-        why: "Why is a new Framework."
+        about: "Dream",
+        what: "More Dream"
     };
 
     var about = function () {
         var result = L.Template.tmpl("<h3>{%=o.about%}</h3>", data);
-	    console.log(result);
         document.getElementById("results").innerHTML = result;
     };
 
     function what() {
         var result = L.Template.tmpl("<h3>{%=o.what%}</h3>", data);
-	    console.log(result);
         document.getElementById("results").innerHTML = result;
     }
 
@@ -48,13 +45,32 @@
         .add(/#why/, why)
         .load();
 
+	function late(func, n){
+		var p = new L.Promise();
+		setTimeout(function() {
+			if(func !== undefined){
+				L.FX.fadeOut(document.getElementById('results'), {duration: 1000, complete: function() {}});
+				func();
+				L.FX.fadeIn(document.getElementById('results'), {duration: 2000, complete: function() {}});
+			}
+			p.done(null, n);
+		}, n);
+		return p;
+	}
+
 	var p = new L.Promise();
-	p.then(
-		window.setTimeout(about, 100)
+	late(undefined,0).then(
+		function() {
+			return late(about, 1000)
+		}
 	).then(
-		window.setTimeout(what, 3000)
+		function() {
+			return late(what, 3000)
+		}
 	).then(
-		window.setTimeout(why, 6000)
+		function() {
+			return late(why, 3000)
+		}
 	)
 
 }(lettuce));
