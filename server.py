@@ -16,7 +16,14 @@ def root():
 class Task(Resource):
     @staticmethod
     def get(task_id):
-        return json.loads(tasks[task_id]), 201
+        results = {}
+        try:
+            results = json.loads(tasks[task_id])
+        except ValueError, e:
+            results = tasks[task_id]
+        else:
+            results = tasks[task_id]
+        return results, 201
 
     @staticmethod
     def post(task_id):
