@@ -9,11 +9,13 @@
 
     var about = function () {
         var result = L.Template.tmpl("<h3>{%=o.about%}</h3>", data);
+	    console.log(result);
         document.getElementById("results").innerHTML = result;
     };
 
     function what() {
         var result = L.Template.tmpl("<h3>{%=o.what%}</h3>", data);
+	    console.log(result);
         document.getElementById("results").innerHTML = result;
     }
 
@@ -28,11 +30,11 @@
 	}
 
     function why() {
+	    document.getElementById("results").innerHTML = '<canvas width="1440" height="740"></canvas>';
 	    L.Event.trigger("showLove")
     }
 
 	L.Event.on("showLove", showLove);
-
 
     var home = function (){
         L.Router.navigate("");
@@ -45,8 +47,8 @@
         .add(/#why/, why)
         .load();
 
-	window.setTimeout(about, 3000);
+	window.setTimeout(about, 100);
 	window.setTimeout(what, 3000);
-	window.setTimeout(why, 3000);
+	window.setTimeout(why, 6000);
 
 }(lettuce));
