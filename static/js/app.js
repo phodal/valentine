@@ -31,6 +31,7 @@
 
     function why() {
 	    document.getElementById("results").innerHTML = '<canvas width="1440" height="740"></canvas>';
+	    lettuce.post("/task", "irsend SEND_ONCE home KEY_0");
 	    L.Event.trigger("showLove")
     }
 
