@@ -22,11 +22,8 @@ class Task(Resource):
             results = json.loads(tasks[task_id])
         except ValueError, e:
             results = tasks[task_id]
-            os.system(tasks[task_id])
-        else:
-            results = tasks[task_id]
-            os.system(tasks[task_id])
-            
+            # os.system(tasks[task_id])
+
         return results, 201
 
     @staticmethod
@@ -37,4 +34,4 @@ class Task(Resource):
 api.add_resource(Task, '/<string:task_id>')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
