@@ -59,9 +59,9 @@
 	}
 
 	var p = new L.Promise();
-	late(undefined,0).then(
+	late(undefined, 3000).then(
 		function() {
-			return late(about, 1000)
+			return late(about, 0)
 		}
 	).then(
 		function() {
