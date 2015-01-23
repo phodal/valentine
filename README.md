@@ -14,3 +14,7 @@
 ##Ajax
 
     lettuce.post("http://127.0.0.1:5000/some", "something", function(data){console.log(data)})
+
+##FX
+
+    L.FX.fadeIn(document.getElementById('results'), {duration: 2000, complete: function() {}});
