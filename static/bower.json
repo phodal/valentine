@@ -1,7 +1,0 @@
-{
-    "name": "valentia",
-    "dependencies": {
-        "lettuce": "0.1.1",
-        "jquery": "2.1.3"
-    }
-}
