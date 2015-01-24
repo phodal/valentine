@@ -1,0 +1,120 @@
+body{
+    margin:0;
+}
+
+@-webkit-keyframes typing {
+    from { width: 0 }
+    to { width:30em }
+}
+
+@-moz-keyframes typing {
+    from { width: 0 }
+    to { width:30em }
+}
+
+@-webkit-keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: black }
+}
+
+@-moz-keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: black }
+}
+
+body { font-family: Consolas, monospace; }
+
+.typing {
+    font-size:300%;
+    width:30em;
+    white-space:nowrap;
+    overflow:hidden;
+    border-right: .1em solid black;
+
+    -webkit-animation: typing 8s steps(30, end), /* # of steps = # of characters */
+    blink-caret 1s step-end infinite;
+    -moz-animation: typing 8s steps(30, end), /* # of steps = # of characters */
+    blink-caret 1s step-end infinite;
+}
+
+#results{
+    margin: 0px;
+    padding: 0px;
+}
+
+h3 {
+    color:#fff;
+    margin: 0 auto;
+    top: 40%;
+    left: 20%;
+    position: absolute;
+}
+
+.home {
+    background: url("../images/notebook.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:100%;
+}
+
+.rise {
+    background: url("../images/rise.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:100%;
+}
+
+.down {
+    background: url("../images/down.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:100%;
+}
+
+.yours {
+    background: url("../images/yours.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:100%;
+}
+
+.together {
+    background: url("../images/together.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:100%;
+}
+
+.rose {
+    background: url("../images/rose.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:100%;
+}
+
+h3 {
+    font-size: 8em;
+}
+
+h1 {
+    margin: 0 auto;
+    top: 50%;
+    left: 30%;
+    position: absolute;
+}
+
+.rose h3 {
+    color:	#FF007F;
+}
