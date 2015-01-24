@@ -3,7 +3,10 @@
 
     var data = {
         rise: "一起看日出",
-        down: "一起看日落"
+        down: "一起看日落",
+	    yours: "有一天，你出现了",
+	    together: "然后",
+	    rose: "IOU"
     };
 
     var rise = function () {
@@ -17,6 +20,24 @@
         var result = L.Template.tmpl(html, data);
         document.getElementById("results").innerHTML = result;
     }
+
+	function yours() {
+		var html = '<div class="yours"><h3>{%=o.yours%}</h3></div>';
+		var result = L.Template.tmpl(html, data);
+		document.getElementById("results").innerHTML = result;
+	}
+
+	function together() {
+		var html = '<div class="together"><h3>{%=o.together%}</h3></div>';
+		var result = L.Template.tmpl(html, data);
+		document.getElementById("results").innerHTML = result;
+	}
+
+	function rose() {
+		var html = '<div class="rose"><h3>{%=o.rose%}</h3></div>';
+		var result = L.Template.tmpl(html, data);
+		document.getElementById("results").innerHTML = result;
+	}
 
 	function showLove() {
 		var c = document.getElementsByTagName('canvas')[0];
@@ -45,6 +66,9 @@
         .add(/#about/, rise)
         .add(/#what/, down)
         .add(/#why/, final)
+	    .add(/#yours/, yours)
+	    .add(/#together/, together)
+	    .add(/#rose/, rose)
         .load();
 
 	function late(func, n){
@@ -70,8 +94,20 @@
 		}
 	).then(
 		function() {
+			return late(yours, 3000)
+		}
+	).then(
+		function() {
+			return late(together, 3000)
+		}
+	).then(
+		function() {
+			return late(rose, 3000)
+		}
+	).then(
+		function() {
 			return late(final, 3000)
 		}
-	)
+	);
 
 }(lettuce));

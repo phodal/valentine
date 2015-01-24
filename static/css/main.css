@@ -42,6 +42,14 @@ body { font-family: Consolas, monospace; }
     padding: 0px;
 }
 
+h3 {
+    color:#fff;
+    margin: 0 auto;
+    top: 40%;
+    left: 20%;
+    position: absolute;
+}
+
 .home {
     background: url("../images/notebook.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -58,7 +66,6 @@ body { font-family: Consolas, monospace; }
     -o-background-size: cover;
     background-size: cover;
     height:100%;
-    color:#fff;
 }
 
 .down {
@@ -68,11 +75,28 @@ body { font-family: Consolas, monospace; }
     -o-background-size: cover;
     background-size: cover;
     height:100%;
-    color:#fff;
 }
 
 .yours {
-    background: url("../images/yours.png") no-repeat center center fixed;
+    background: url("../images/yours.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:100%;
+}
+
+.together {
+    background: url("../images/together.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:100%;
+}
+
+.rose {
+    background: url("../images/rose.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -84,16 +108,13 @@ h3 {
     font-size: 8em;
 }
 
-.dream {
+h1 {
     margin: 0 auto;
     top: 50%;
     left: 30%;
     position: absolute;
 }
 
-h3 {
-    margin: 0 auto;
-    top: 40%;
-    left: 20%;
-    position: absolute;
+.rose h3 {
+    color:	#FF007F;
 }
