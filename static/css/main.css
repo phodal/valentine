@@ -58,6 +58,7 @@ body { font-family: Consolas, monospace; }
     -o-background-size: cover;
     background-size: cover;
     height:100%;
+    color:#fff;
 }
 
 .down {
@@ -67,6 +68,7 @@ body { font-family: Consolas, monospace; }
     -o-background-size: cover;
     background-size: cover;
     height:100%;
+    color:#fff;
 }
 
 .yours {
@@ -82,9 +84,16 @@ h3 {
     font-size: 8em;
 }
 
-.dream, h3 {
+.dream {
     margin: 0 auto;
     top: 50%;
     left: 30%;
+    position: absolute;
+}
+
+h3 {
+    margin: 0 auto;
+    top: 40%;
+    left: 20%;
     position: absolute;
 }
