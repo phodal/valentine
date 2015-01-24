@@ -7,12 +7,14 @@
     };
 
     var about = function () {
-        var result = L.Template.tmpl("<h3>{%=o.about%}</h3>", data);
+	    var html = '<div class="rise"><h3>{%=o.about%}</h3></div>';
+	    var result = L.Template.tmpl(html, data);
         document.getElementById("results").innerHTML = result;
     };
 
     function what() {
-        var result = L.Template.tmpl("<h3>{%=o.what%}</h3>", data);
+	    var html = '<div class="down"><h3>{%=o.what%}</h3></div>';
+        var result = L.Template.tmpl(html, data);
         document.getElementById("results").innerHTML = result;
     }
 
@@ -49,9 +51,9 @@
 		var p = new L.Promise();
 		setTimeout(function() {
 			if(func !== undefined){
-				L.FX.fadeOut(document.getElementById('results'), {duration: 1000, complete: function() {}});
+				//L.FX.fadeOut(document.getElementById('results'), {duration: 3000, complete: function() {}});
 				func();
-				L.FX.fadeIn(document.getElementById('results'), {duration: 2000, complete: function() {}});
+				L.FX.fadeIn(document.getElementById('results'), {duration: 3000, complete: function() {}});
 			}
 			p.done(null, n);
 		}, n);

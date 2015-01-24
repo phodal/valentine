@@ -24,8 +24,8 @@ body{
 
 body { font-family: Consolas, monospace; }
 
-h1 {
-    font-size:150%;
+.typing {
+    font-size:300%;
     width:30em;
     white-space:nowrap;
     overflow:hidden;
@@ -38,6 +38,11 @@ h1 {
 }
 
 #results{
+    margin: 0px;
+    padding: 0px;
+}
+
+.home {
     background: url("../images/notebook.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -71,6 +76,10 @@ h1 {
     -o-background-size: cover;
     background-size: cover;
     height:100%;
+}
+
+h3 {
+    font-size: 8em;
 }
 
 .dream, h3 {
