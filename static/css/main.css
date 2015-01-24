@@ -36,3 +36,46 @@ h1 {
     -moz-animation: typing 8s steps(30, end), /* # of steps = # of characters */
     blink-caret 1s step-end infinite;
 }
+
+#results{
+    background: url("../images/notebook.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:100%;
+}
+
+.rise {
+    background: url("../images/rise.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:100%;
+}
+
+.down {
+    background: url("../images/down.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:100%;
+}
+
+.yours {
+    background: url("../images/yours.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height:100%;
+}
+
+.dream, h3 {
+    margin: 0 auto;
+    top: 50%;
+    left: 30%;
+    position: absolute;
+}
