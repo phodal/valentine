@@ -11,7 +11,6 @@
 
 	function render(element) {
 		var html = '<div class="' + element + '"><h3>{%=o.' +  element + '%}</h3></div>';
-		console.log(html);
 		var result = L.Template.tmpl(html, data);
 		document.getElementById("results").innerHTML = result;
 	}
@@ -38,7 +37,6 @@
 
 	function showLove() {
 		var c = document.getElementsByTagName('canvas')[0];
-		var b = document.body;
 		var a = c.getContext('2d');
 		e=[];h=[];O=c.width=innerWidth;Q=c.height=innerHeight;v=32;M=Math;R=M.random;C=M.cos;Y=6.3;for(i=0;i<Y;i+=0.2)h.push([O/2+180*M.pow(M.sin(i),3),Q/2+10*-(15*C(i)-5*C(2*i)-2*C(3*i)-C(4*i))]);
 		for(i=0;i<v;){x=R()*O;y=R()*Q;H=80*(i/v)+280;S=40*R()+60;B=60*R()+20;f=[];for(k=0;k<v;)f[k++]={x:x,y:y,X:0,Y:0,R:1-k/v+1,S:R()+1,q:~~(R()*v),D:2*(i%2)-1,F:0.2*R()+0.7,f:"hsla("+~~H+","+~~S+"%,"+~~B+"%,.1)"};e[i++]=f}
@@ -68,42 +66,46 @@
 	    .add(/#rose/, rose)
         .load();
 
-	function late(func, n){
+	function show(func, n){
 		var p = new L.Promise();
-		setTimeout(function() {
-			if(func !== undefined){
+		var code = function () {
+			if (func !== undefined) {
 				func();
-				L.FX.fadeIn(document.getElementById('results'), {duration: 3000, complete: function() {}});
+				L.FX.fadeIn(document.getElementById('results'), {
+					duration: 3000, complete: function () {
+					}
+				});
 			}
 			p.done(null, n);
-		}, n);
+		};
+		setTimeout(code, n);
 		return p;
 	}
 
 	var p = new L.Promise();
-	late(undefined, 3000).then(
+	show(undefined, 3000).then(
 		function() {
-			return late(rise, 0)
+			return show(rise, 0)
 		}
 	).then(
 		function() {
-			return late(down, 3000)
+			return show(down, 3000)
 		}
 	).then(
 		function() {
-			return late(yours, 3000)
+			return show(yours, 3000)
 		}
 	).then(
 		function() {
-			return late(together, 3000)
+			return show(together, 3000)
 		}
 	).then(
 		function() {
-			return late(rose, 3000)
+			return show(rose, 3000)
 		}
 	).then(
 		function() {
-			return late(final, 3000)
+			return show(final, 3000)
 		}
 	);
 
