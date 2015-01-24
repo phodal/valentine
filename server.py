@@ -1,8 +1,12 @@
+import json
+import platform
+import time
+
 from flask import Flask, request
 from flask_restful import Resource, Api
-import json
-import os
 import serial
+ser = serial.Serial("/dev/ttyACM0", 9600)
+
 
 app = Flask(__name__, static_url_path='')
 app.secret_key = 'why would I tell you my secret key?'
@@ -21,18 +25,16 @@ class Task(Resource):
         results = {}
         try:
             results = json.loads(tasks[task_id])
-        except ValueError, e:
+        except ValueError:
             results = tasks[task_id]
-            # os.system(tasks[task_id])
 
         return results, 201
 
     @staticmethod
     def post(task_id):
         tasks[task_id] = request.data
-        print request.data
-        ser=serial.Serial("/dev/ttyACM0",9600)
         ser.write(request.data)
+        time.sleep(6)
         return tasks[task_id], 204, {'Access-Control-Allow-Origin': '*'}
 
 api.add_resource(Task, '/<string:task_id>')
