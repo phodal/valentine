@@ -1,5 +1,4 @@
 import json
-import platform
 import time
 
 from flask import Flask, request

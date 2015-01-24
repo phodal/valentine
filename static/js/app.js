@@ -1,13 +1,14 @@
 (function (lettuce) {
-    var L = new lettuce();
-
-    var data = {
-        rise: "一起看日出",
-        down: "一起看日落",
-	    yours: "有一天，你出现了",
-	    together: "然后",
-	    rose: "IOU"
-    };
+    var L = new lettuce(),
+		irRemote = "2",
+		fullStar = "1",
+	    data = {
+	        rise: "一起看日出",
+	        down: "一起看日落",
+		    yours: "有一天，你出现了",
+		    together: "然后",
+		    rose: "IOU"
+	    };
 
 	function render(element) {
 		var html = '<div class="' + element + '"><h3>{%=o.' +  element + '%}</h3></div>';
@@ -15,9 +16,9 @@
 		document.getElementById("results").innerHTML = result;
 	}
 
-	var rise = function () {
+	function rise() {
 		render('rise');
-	};
+	}
 
     function down() {
 	    render('down');
@@ -46,7 +47,7 @@
 
     function final() {
 	    document.getElementById("results").innerHTML = '<canvas width="1440" height="740"></canvas>';
-	    lettuce.post("/serial", "1");
+	    lettuce.post("/serial", irRemote);
 	    L.Event.trigger("showLove")
     }
 
@@ -93,7 +94,7 @@
 		}
 	).then(
 		function() {
-			lettuce.post("/serial", "2");
+			lettuce.post("/serial", fullStar);
 			return show(yours, 3000)
 		}
 	).then(

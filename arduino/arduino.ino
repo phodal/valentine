@@ -2,10 +2,12 @@
 
 int starPort = 12;
 IRsend irsend;
+int fullStar = 1;
+int irRemote = 2;
 
-void setup() {             
-  Serial.begin(9600);  
-  pinMode(starPort, OUTPUT);     
+void setup() {
+  Serial.begin(9600);
+  pinMode(starPort, OUTPUT);
 }
 
 int serialData;
@@ -15,15 +17,15 @@ void loop() {
   {
     int inChar = Serial.read();
     if (isDigit(inChar)) {
-      inString += (char)inChar; 
+      inString += (char)inChar;
     }
     serialData=inString.toInt();
     Serial.print(serialData);
   }
-  if(serialData == 1){
-    digitalWrite(starPort, HIGH);   
-  } else 
-  if( serialData == 2){
+  if(serialData == fullStar){
+    digitalWrite(starPort, HIGH);
+  } else
+  if( serialData == irRemote){
     irsend.sendNEC(0xFF906F,32); // Sony TV power code
     delay(1000);
   }
