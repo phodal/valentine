@@ -26,6 +26,7 @@
 
 	function yours() {
 		render('yours');
+		lettuce.post("/serial", fullStar);
 	}
 
 	function together() {
@@ -94,7 +95,6 @@
 		}
 	).then(
 		function() {
-			lettuce.post("/serial", fullStar);
 			return show(yours, 3000)
 		}
 	).then(
