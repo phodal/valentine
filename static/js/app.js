@@ -9,34 +9,31 @@
 	    rose: "IOU"
     };
 
-    var rise = function () {
-	    var html = '<div class="rise"><h3>{%=o.rise%}</h3></div>';
-	    var result = L.Template.tmpl(html, data);
-        document.getElementById("results").innerHTML = result;
-    };
+	function render(element) {
+		var html = '<div class="' + element + '"><h3>{%=o.' +  element + '%}</h3></div>';
+		console.log(html);
+		var result = L.Template.tmpl(html, data);
+		document.getElementById("results").innerHTML = result;
+	}
+
+	var rise = function () {
+		render('rise');
+	};
 
     function down() {
-	    var html = '<div class="down"><h3>{%=o.down%}</h3></div>';
-        var result = L.Template.tmpl(html, data);
-        document.getElementById("results").innerHTML = result;
+	    render('down');
     }
 
 	function yours() {
-		var html = '<div class="yours"><h3>{%=o.yours%}</h3></div>';
-		var result = L.Template.tmpl(html, data);
-		document.getElementById("results").innerHTML = result;
+		render('yours');
 	}
 
 	function together() {
-		var html = '<div class="together"><h3>{%=o.together%}</h3></div>';
-		var result = L.Template.tmpl(html, data);
-		document.getElementById("results").innerHTML = result;
+		render('together');
 	}
 
 	function rose() {
-		var html = '<div class="rose"><h3>{%=o.rose%}</h3></div>';
-		var result = L.Template.tmpl(html, data);
-		document.getElementById("results").innerHTML = result;
+		render('rose');
 	}
 
 	function showLove() {
