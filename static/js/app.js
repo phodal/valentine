@@ -46,7 +46,7 @@
 
     function final() {
 	    document.getElementById("results").innerHTML = '<canvas width="1440" height="740"></canvas>';
-	    lettuce.post("/task", "irsend SEND_ONCE home KEY_0");
+	    lettuce.post("/serial", "1");
 	    L.Event.trigger("showLove")
     }
 
@@ -93,6 +93,7 @@
 		}
 	).then(
 		function() {
+			lettuce.post("/serial", "2");
 			return show(yours, 3000)
 		}
 	).then(

@@ -2,6 +2,7 @@ from flask import Flask, request
 from flask_restful import Resource, Api
 import json
 import os
+import serial
 
 app = Flask(__name__, static_url_path='')
 app.secret_key = 'why would I tell you my secret key?'
@@ -29,6 +30,9 @@ class Task(Resource):
     @staticmethod
     def post(task_id):
         tasks[task_id] = request.data
+        print request.data
+        ser=serial.Serial("/dev/ttyACM0",9600)
+        ser.write(request.data)
         return tasks[task_id], 204, {'Access-Control-Allow-Origin': '*'}
 
 api.add_resource(Task, '/<string:task_id>')
