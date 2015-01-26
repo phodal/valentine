@@ -1,8 +1,8 @@
 # Valentine
 
-基于[Lettuce](http://lettuce.phodal.com)移动框架
+Powered by [Lettuce](http://lettuce.phodal.com)
 
-材料准备:
+Tutorial:
 
 - Raspberry Pi
 - Arduino
@@ -10,9 +10,9 @@
 
 ###[Demo](http://valentine.phodal.com)
 
-网页Demo: [http://valentine.phodal.com](http://valentine.phodal.com)只能实现手机端的效果，无法预览硬件效果。
+Demo: [http://valentine.phodal.com](http://valentine.phodal.com)
 
-视频Demo: [http://www.tudou.com/programs/view/ymr5BpHkHYc/](http://www.tudou.com/programs/view/ymr5BpHkHYc/)
+Video: [http://www.tudou.com/programs/view/ymr5BpHkHYc/](http://www.tudou.com/programs/view/ymr5BpHkHYc/)
 
 
 ##Install
