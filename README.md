@@ -14,7 +14,6 @@ Demo: [http://valentine.phodal.com](http://valentine.phodal.com)
 
 Video: [http://www.tudou.com/programs/view/ymr5BpHkHYc/](http://www.tudou.com/programs/view/ymr5BpHkHYc/)
 
-
 ##Install
 
 1.Clone 
@@ -34,7 +33,6 @@ Video: [http://www.tudou.com/programs/view/ymr5BpHkHYc/](http://www.tudou.com/pr
 ####Remind
 
     curl http://0.0.0.0:5000/todo1 -d "data=Remember the milk" -X PUT
-
 
 ####IR Remote
 
