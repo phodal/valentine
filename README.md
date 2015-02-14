@@ -4,6 +4,8 @@ Powered by [Lettuce](http://lettuce.phodal.com)
 
 Tutorial:
 
+教程: [情人节礼物大作战](http://www.xuntayizhan.com/person/geeks-love-programmer-gift-guide/)
+
 - Raspberry Pi
 - Arduino
 - 其他(控制用)
