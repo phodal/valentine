@@ -6,17 +6,19 @@ Tutorial:
 
 教程: [情人节礼物大作战](http://www.xuntayizhan.com/person/geeks-love-programmer-gift-guide/)
 
+相关的文章：[情人节：程序员应该送什么礼物给女朋友](https://zhuanlan.zhihu.com/p/25149467)
+
 - Raspberry Pi
 - Arduino
 - 其他(控制用)
 
-###[Demo](http://valentine.phodal.com)
+### [Demo](http://valentine.phodal.com)
 
 Demo: [http://valentine.phodal.com](http://valentine.phodal.com)
 
 Video: [http://www.tudou.com/programs/view/ymr5BpHkHYc/](http://www.tudou.com/programs/view/ymr5BpHkHYc/)
 
-##Install
+## Install
 
 1.Clone 
 
@@ -30,21 +32,21 @@ Video: [http://www.tudou.com/programs/view/ymr5BpHkHYc/](http://www.tudou.com/pr
 
     python server.py    
 
-##Others
+## Others
 
-####Remind
+#### Remind
 
     curl http://0.0.0.0:5000/todo1 -d "data=Remember the milk" -X PUT
 
-####IR Remote
+#### IR Remote
 
     irsend SEND_ONCE home KEY_0
 
-####Ajax
+#### Ajax
 
     lettuce.post("http://127.0.0.1:5000/some", "something", function(data){console.log(data)})
 
-####FX
+#### FX
 
     L.FX.fadeIn(document.getElementById('results'), {duration: 2000, complete: function() {}});
 
